@@ -17,7 +17,7 @@ Vector2 SeparationRule::computeForce(const std::vector<Boid*>& neighborhood, Boi
         {
             separatingForce += neighborhood[i]->getPosition();
 
-            if( Vector2::getDistance(neighborhood[i]->getPosition(), neighborhood[i + 1]->getPosition()) < desiredDistance )\
+            if( Vector2::getDistance(neighborhood[i]->getPosition(), neighborhood[i + 1]->getPosition()) < desiredDistance )
             {
 
             }
