@@ -11,8 +11,10 @@ Vector2 AlignmentRule::computeForce(const std::vector<Boid*>& neighborhood, Boid
         //foreach creates a copy if not a pointer
         //Jason Turner Youtube
 
-        averageVelocity.x += boid->velocity.x;
-        averageVelocity.y += boid->velocity.y;
+        averageVelocity += Vector2::normalized(boid->velocity);
+
+        //averageVelocity.x += boid->velocity.x;
+        //averageVelocity.y += boid->velocity.y;
     }
 
     // todo: add your code here to align each boid in a neighborhood
