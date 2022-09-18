@@ -5,9 +5,36 @@
 Vector2 BoundedAreaRule::computeForce(const std::vector<Boid*>& neighborhood, Boid* boid) {
     //Return a force proportional to the proximity of the boids with the bounds, and opposed to it
     Vector2 force = Vector2::zero(); //zero
+    //this->world->engine->window->size().x;
 
     // todo: add here your code code here do make the boid follow the bounded box rule
     // hint: use this->world->engine->window->size() and desiredDistance
+
+    //four edges of the ascreen vertical and horizantal x y
+    //bottom of screen is screen height  right screen width
+    // top 0 y
+    //left 0 x
+    //left and right check the x of the boid add desired\distance ti  left size force is positive in x direction
+    //force.x equals one
+    //screen width  - desired distance < boids pos. x force.x = -1
+
+    if(desiredDistance > boid->getPosition().x)
+    {
+        force.x = 1;
+    }
+    if((this->world->engine->window->size().x - desiredDistance) < boid->getPosition().x)
+    {
+        force.x = -1;
+    }
+    if((this->world->engine->window->size().y - desiredDistance) < boid->getPosition().y)
+    {
+        force.y = -1 ;
+    }
+    if(desiredDistance > boid->getPosition().y)
+    {
+        force.y = 1;
+    }
+
 
     return force;
 }
