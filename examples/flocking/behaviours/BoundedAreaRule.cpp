@@ -35,7 +35,6 @@ Vector2 BoundedAreaRule::computeForce(const std::vector<Boid*>& neighborhood, Bo
         force.y = 1;
     }
 
-
     return force;
 }
 
